@@ -1,0 +1,31 @@
+-- Postgres commands ---
+ 
+sudo -i -u postgres
+
+psql
+
+To Exit postgres session
+\q 
+
+To Change superuser password
+\password postgres
+
+---- Postgres db first steps ----
+
+Create a schema 
+CREATE SCHEMA schema_name
+
+create a user (role) with password
+CREATE USER user_name PASSWORD 'password'
+
+Grant privileges (like the ability to create tables) on new schema to new role
+GRANT ALL ON SCHMEA schema_name TO user_name
+
+Grant privileges (like the ability to insert) to tables in the new schema to the new role 
+GRANT ALL ON ALL TABLES IN SCHEMA schema_name to user_name
+
+Login another user steps
+sudo -i -u postgres
+psql -h host -U user -d database
+
+
